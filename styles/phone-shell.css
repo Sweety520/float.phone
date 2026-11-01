@@ -9,7 +9,7 @@
   font-family: var(--app-font-family);
 }
 
-/* 移动端视口完美自适应修复：解决手机屏幕上下溢出与右侧显示不全 */
+/* 移动端视口居中完美贴合修复：解决偏右下与溢出问题 */
 @media (max-width: 768px) {
   html, body {
     width: 100%;
@@ -17,32 +17,61 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
+    background: #000;
   }
   .phone-shell-wrap {
+    position: fixed;
+    inset: 0;
     width: 100vw !important;
+    height: 100vh !important;
     height: 100dvh !important;
     max-width: none !important;
     margin: 0 !important;
+    padding: 0 !important;
     display: flex !important;
-    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
   }
-  .phone-case, .phone-frame {
+  .phone-case {
     width: 100vw !important;
+    height: 100vh !important;
     height: 100dvh !important;
     max-width: none !important;
     max-height: none !important;
     border-radius: 0 !important;
     border: none !important;
-    padding: 0 !important;
     box-shadow: none !important;
-    background: #ffffff !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #0c0c0c !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
-  .phone-shell {
+  .phone-frame {
     width: 100vw !important;
+    height: 100vh !important;
     height: 100dvh !important;
     max-width: none !important;
     max-height: none !important;
     border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #0c0c0c !important;
+    box-shadow: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .phone-shell {
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    max-width: none !important;
+    max-height: none !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px) !important;
+    box-sizing: border-box !important;
     flex: 1 !important;
   }
 }
